@@ -29,9 +29,19 @@
       <li><a href="https://www.roblox.com/">Roblox</a></li>
       <li><a href="https://penguinmod.com/">PenguinMod</a></li>
     </ul>
-
-    <p>To learn how to make your own site, check out these <a href="https://neocities.org/tutorials">tutorials</a>.</p>
+   
+    
     <p> Thanks to <a href="https://tholman.com/">Tholman</a> for the <a href="https://github.com/tholman/cursor-effects">cursor effects</a>!</p>
-<div style="font-family:monospace;text-align:center; background:#fff;color:#000;position:fixed; :-;bottom:0;right:0;:-; width:300px;border:1px solid black;">Music Player [<a href="https://kappa.vgmsite.com/soundtracks/gameboy-camera-gameboy-game-rip/lmuyckaz/055%20-%20animation%20theme%2005.mp3" style="color:#555; animation:none;">source</a>]<br /><audio preload="auto" controls src="https://kappa.vgmsite.com/soundtracks/gameboy-camera-gameboy-game-rip/lmuyckaz/055%20-%20animation%20theme%2005.mp3"></audio></div>
+<script src="https://lib.openmpt.org/libopenmpt.js"></script>
+<script>
+  let player;
+  async function loadITFile() {
+    const response = await fetch("winds.it");
+    const arrayBuffer = await response.arrayBuffer();
+    player = new Module.OpenMptModule(arrayBuffer);
+    player.play();
+  }
+  loadITFile();
+</script>
   </body>
 </html>
