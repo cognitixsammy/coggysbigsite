@@ -1,0 +1,13 @@
+this should hopefully play music
+
+<script src="https://lib.openmpt.org/libopenmpt.js"></script>
+<script>
+  let player;
+  async function loadITFile() {
+    const response = await fetch("winds.it");
+    const arrayBuffer = await response.arrayBuffer();
+    player = new Module.OpenMptModule(arrayBuffer);
+    player.play();
+  }
+  loadITFile();
+</script>
